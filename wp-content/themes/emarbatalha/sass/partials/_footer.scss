@@ -1,0 +1,30 @@
+// ==========
+// = FOOTER =
+// ==========
+#container footer { 
+	clear:both; 
+	margin-top: 5px; 
+	min-height: 110px;
+
+	&.white {
+		background: #ffffff;
+	}
+
+	div {
+		padding-top: $grid-padding;
+
+		&.direitos {
+			@include span-columns(12, 16, $grid-padding);
+		}
+
+		&.companhia {
+			@include span-columns(4 omega, 16, $grid-padding);
+			text-align: right;
+		}
+
+		p, a {
+			font-size: 10px;
+		}
+	}
+	
+}

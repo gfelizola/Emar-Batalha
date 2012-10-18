@@ -1,0 +1,22 @@
+body { @include base-font-properties; background: black; }
+body, select, input, textarea { color: $font-color; }
+a:hover, a:active { outline: none; }
+a,
+a:active,
+a:visited { color: $font-color; text-decoration: none; }
+a:hover { color: $hover-color; }
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+a img  { border:none; }
+
+pre, code, kbd, samp { font-family: $fixed-font-family; }
+
+::-moz-selection { 
+  background: $quiet-color; 
+  color: $loud-color; 
+  text-shadow: none; 
+}
+::selection { 
+  background: $quiet-color; 
+  color: $loud-color;
+  text-shadow: none; 
+}

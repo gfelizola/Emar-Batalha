@@ -1,0 +1,43 @@
+// =======================
+// = HEADER & NAVIGATION =
+// =======================
+header{ 
+	min-height: 110px;
+	margin-bottom: 5px;
+
+	&.white {
+		background: #ffffff;
+	}
+
+	.logo {
+		@include span-columns(2, 16, $grid-padding);
+		margin-top: $grid-padding;
+
+		h1 {
+			@include sprite-replace-text-with-dimensions($site_sprites, logo_preto);
+		}
+	}
+	
+	nav {
+		@include span-columns(14 omega, 16);
+		padding-top: 80px;
+		height: 30px;
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: block;
+			overflow: hidden;
+			float: right;
+		
+			li {
+				display: inline-block;
+				float: left;
+				padding: 0 $grid-padding;
+				margin: 0 0;
+				font-size: 13px;
+			}
+		}
+	}
+}
