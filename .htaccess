@@ -4,10 +4,6 @@
 RewriteEngine On
 RewriteBase /emar/
 RewriteRule ^index\.php$ - [L]
-RewriteRule ^assets/css/(.*) /emar/wp-content/themes/emarbatalha/assets/css/$1 [QSA,L]
-RewriteRule ^assets/js/(.*) /emar/wp-content/themes/emarbatalha/assets/js/$1 [QSA,L]
-RewriteRule ^assets/img/(.*) /emar/wp-content/themes/emarbatalha/assets/img/$1 [QSA,L]
-RewriteRule ^plugins/(.*) /emar/wp-content/plugins/$1 [QSA,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /emar/index.php [L]

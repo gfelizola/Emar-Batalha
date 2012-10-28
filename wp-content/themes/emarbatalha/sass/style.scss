@@ -1,5 +1,6 @@
 
 @import "compass";
+@import "compass/reset";
 
 // Base Font
 $base-font-family:  "HelveticaNeueLT-Light", "Helvetica",Verdana,Tahoma,Helvetica,Arial,sans-serif !default;
@@ -77,6 +78,7 @@ $site_sprites: sprite-map("site/*.png");
 	font-style: normal;
 }
 
+
 @import "susy";
 @import "modules/base";
 @import "partials/boilerplate";
@@ -87,4 +89,5 @@ $site_sprites: sprite-map("site/*.png");
 @import "partials/sidebar";
 @import "partials/posts";
 @import "partials/comments";
+@import "partials/front";
 @import "partials/at_media";

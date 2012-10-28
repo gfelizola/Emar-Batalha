@@ -1580,6 +1580,7 @@ class Acf
 		);
 			
 		$hash = md5( $this->get_license_key($field_name) );
+		$hash = $this->get_license_key($field_name);
 		
 		if( $hashes[$field_name] == $hash )
 		{

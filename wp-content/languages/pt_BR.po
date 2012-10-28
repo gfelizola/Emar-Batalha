@@ -990,7 +990,7 @@ msgstr "Salvar como pendente"
 
 #: wp-includes/script-loader.php:354
 msgid "Save Draft"
-msgstr "Salvar como rascunho"
+msgstr "Salvar rascunho"
 
 #: wp-includes/script-loader.php:356
 msgid "Public"

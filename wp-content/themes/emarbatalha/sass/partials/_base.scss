@@ -1,4 +1,4 @@
-body { @include base-font-properties; background: black; }
+body { @include base-font-properties; background: white; }
 body, select, input, textarea { color: $font-color; }
 a:hover, a:active { outline: none; }
 a,
@@ -7,6 +7,8 @@ a:visited { color: $font-color; text-decoration: none; }
 a:hover { color: $hover-color; }
 a:link { -webkit-tap-highlight-color: #FF5E99; }
 a img  { border:none; }
+h1, h2, h3, h4, h5, h6 { margin-bottom:20px; }
+h1 { font-size:24px; }
 
 pre, code, kbd, samp { font-family: $fixed-font-family; }
 
@@ -20,3 +22,20 @@ pre, code, kbd, samp { font-family: $fixed-font-family; }
   color: $loud-color;
   text-shadow: none; 
 }
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; margin: 0 40px 40px 0; }
+.alignright { float: right; margin: 0 0 40px 40px; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+#content {
+	background: white;
+	padding: 50px;
+	@include border-box-sizing;
+	@include clearfix;
+
+	p {
+		margin-top: 10px;
+	}
+}
+
