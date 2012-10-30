@@ -8,8 +8,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 	<title><?php
-		// Returns the title based on the type of page being viewed -- jeebus this is a mess.
 		if (is_single()){ single_post_title(); echo ' | ';  bloginfo( 'name' );
 		} elseif (is_home() || is_front_page()){ bloginfo( 'name' ); if(get_bloginfo( 'description' )){ echo ' | ' ; bloginfo( 'description' ); }
 		} elseif ( is_page() ){ single_post_title( '' ); echo ' | '; bloginfo( 'name' );
@@ -26,10 +26,26 @@
 	<link rel="alternate"  href="<?php bloginfo('atom_url'); ?>"    type="application/atom+xml" title="Atom 0.3" />
 	<link rel="pingback"   href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
+
+	<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 </head>
-<body <?php if(is_front_page()): ?>id="home"<?php endif; ?> <?php body_class(); ?> style="background-image:url('<?php the_field('imagem_de_fundo'); ?>'); background-repeat: <?php the_field('repeticao_do_fundo'); ?>; background-position: <?php the_field('posicao_do_fundo'); ?>;">
+<?php 
+$background = get_field('imagem_de_fundo');
+$repeticao 	= get_field('repeticao_do_fundo');
+$posicao 	= get_field('posicao_do_fundo');
+$cor_menu 	= get_field('header_bgcolor');
+
+if( ! $background ) $background = get_template_directory_uri() . '/images/bg_padrao.jpg';
+if( ! $repeticao ) 	$repeticao = 'no-repeat';
+if( ! $posicao ) 	$posicao = 'right top';
+if( ! $cor_menu ) 	$cor_menu = 'transparent';
+?>
+<body <?php if(is_front_page()): ?>id="home"<?php endif; ?> <?php body_class(); ?> style="background-image:url('<?php echo $background; ?>'); background-repeat: <?php echo $repeticao; ?>; background-position: <?php echo $posicao; ?>;">
 	<div id="container">
-		<header class="<?php the_field('header_bgcolor'); ?>">
+		<header class="<?php echo $cor_menu; ?>">
 			<div class="logo <?php the_field('cor_do_logo'); ?>">
 				<h1><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 			</div>

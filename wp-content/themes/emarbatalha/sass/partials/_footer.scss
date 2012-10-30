@@ -2,7 +2,7 @@
 // = FOOTER =
 // ==========
 #container footer { 
-	clear:both; 
+	@include clearfix;
 	margin-top: 5px; 
 	min-height: 110px;
 
@@ -14,7 +14,7 @@
 		padding-top: $grid-padding;
 
 		&.direitos {
-			@include span-columns(12, 16, $grid-padding);
+			@include span-columns(11, 16, $grid-padding);
 		}
 
 		&.companhia {
@@ -25,6 +25,10 @@
 		p, a {
 			font-size: 11px;
 		}
+	}
+
+	&.txt-branco {
+		p, a { color: white; }
 	}
 	
 }
