@@ -1,16 +1,17 @@
-			<footer class="<?php echo $cor_menu; ?>">
+			<footer class="<?php the_field('header_bgcolor'); ?>">
 				<div class="direitos">
 					<p> Emar Batalha &copy;<?php echo date('Y').'';?>. Todos os direitos reservados.</p>
 				</div>
-				<div class="companhia">
+				<!-- div class="companhia">
 					<a href="http://www.agente.com.br" title="Agente" target="_blank">AGENTE</a>
-				</div>
+				</div -->
 			</footer>
 		</div>
 		<?php wp_footer(); ?>
 	</div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.jcarousel.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.pikachoose.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
 <?php if (GOOGLE_ANALYTICS_ID) : ?>

@@ -21,7 +21,7 @@ header{
 			@include sprite-replace-text-with-dimensions($site_sprites, logo_preto);
 
 			&.vermelho {
-				@include sprite-replace-text-with-dimensions($site_sprites, logo_vermelho);
+				@include sprite-replace-text-with-dimensions($site_sprites, logo_vermelho); 
 			}
 		}
 	}
@@ -29,11 +29,11 @@ header{
 	nav {
 		@include span-columns(14 omega, 16);
 		padding-top: 80px;
-		height: 30px;
+		min-height: 30px;
 
 		ul {
 			margin: 0;
-			padding: 0;
+			padding: 0 20px 0 0;
 			list-style: none;
 			display: block;
 			overflow: hidden;
@@ -46,10 +46,15 @@ header{
 				margin: 0 0;
 				font-size: 13px;
 
+				a { text-transform: uppercase; }
+
 				&.current-menu-item a { color:$hover-color; }
 			}
 		}
 
-		&.branco ul li a { color: white; }
+		&.branco ul li{
+			a { color: white; }	
+			&.current-menu-item a { color:$hover-color; }
+		} 
 	}
 }

@@ -1,42 +1,52 @@
+.page-id-12 {
+	#content {
+		background: white;
+	}
+}
+
 .home {
 	background: #000000;
+
+	footer {
+		background: white;
+	}
 
 	#content {
 		@include container;
 		@include clearfix;
-		padding: 0;
-		background: white;
+		padding    : 0;
+		background : white;
 
 	}
 
 	.container_destaques {
 		@include clearfix;
 		@include span-columns(16 omega, 16);
-		height: 450px;
-		background: white;
+		height     : 450px;
+		background : white;
 
 		.destaque_principal {
-			position: relative;
-			height: 350px;
+			position : relative;
+			height   : 350px;
 
 			img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 1;
+				position : absolute;
+				top      : 0;
+				left     : 0;
+				z-index  : 1;
 			}
 
 			.texto {
-				position: absolute;
-				width: 400px;
-				right: 0;
-				z-index: 2;
-				padding-top: 100px;
-				text-align: center;
+				position    : absolute;
+				width       : 400px;
+				right       : 0;
+				z-index     : 2;
+				padding-top : 100px;
+				text-align  : center;
 
 				h2 {
-					font-size: 30px;
-					margin-bottom: 30px;
+					font-size     : 30px;
+					margin-bottom : 30px;
 				}
 
 				p {
@@ -45,12 +55,12 @@
 
 				.maisdetalhes {
 
-					width: 110px;
-					text-align: center;
-					border: {
-						style: solid;
-						color: #000000;
-						width: 1px 0;
+					width      : 110px;
+					text-align : center;
+					border     : {
+						style : solid;
+						color : #000000;
+						width : 1px 0;
 					};
 				}
 			}
@@ -61,23 +71,23 @@
 			@include span-columns(16, 16);
 
 			ul {
-				width: auto;
-				margin: 0;
-				padding: 0;
-				list-style: none;
+				width      : auto;
+				margin     : 0 0 0 10px;
+				padding    : 0;
+				list-style : none;
 
 				li {
 					@include span-columns(4 omega, 12);
-					height: 83px;
-					border-right: 1px solid #c2c2c2;
-					float: left;
+					height       : 83px;
+					border-right : 1px solid #c2c2c2;
+					float        : left;
 
 					&.no-border { border:0; }
 
 					a {
-						display:block;
-						width: 100%;
-						height: 100%;
+						display :block;
+						width   : 100%;
+						height  : 100%;
 
 						img { margin:10px 20px; vertical-align: middle; }
 					}
@@ -100,30 +110,32 @@
 
 	.produto {
 		@include span-columns(16 omega, 16);
-		position: relative;
-		border: 1px solid #d3d3d3;
-		background: white;
-		height: 382px;
+		position   : relative;
+		border     : 1px solid #d3d3d3;
+		background : white;
+		height     : 382px;
 
 
 		.imagem {
-			position: absolute;
-			top: 0;
-			left: 0;
+			position : absolute;
+			top      : 0;
+			left     : 0;
 		}
 
 		.descricao {
-			position: absolute;
-			top: 130px;
-			right: 0;
-			width: 300px;
-			padding-left: 20px;
-			border-left: 2px solid black;
+			position    : absolute;
+			top         : 130px;
+			right       : 0;
+			width       : 300px;
+			padding     : 40px 0 0 20px;
+			border-left : 2px solid black;
 
 			h3 {
-				text-transform: uppercase;
-				font-size: 15px;
-				margin-bottom: 30px;
+				text-transform : uppercase;
+				font-size      : 15px;
+				font-weight    : normal;
+				line-height    : 12px;
+				margin-bottom  : 30px;
 			}
 
 			p { 
@@ -131,110 +143,209 @@
 
 			}
 		}
+
+		
 	}
 
 	.relacionados {
 		@include span-columns(16 omega, 16);
-		margin-top: 50px;
+		margin-top: 10px;
+
+		p { padding: 20px 30px; }
 
 		ul {
 			@include container;
-			margin: 0;
-			padding: 0;
-			border: 1px solid #d3d3d3;
+			margin  : 0;
+			padding : 0;
+			border  : 1px solid #d3d3d3;
 
 			li {
 				@include span-columns(2 omega,12);
 				@include nth-omega(6n);
-				width: 150px;
-				height: 115px;
-				border-right: 1px solid #d3d3d3;
+				width        : 150px;
+				height       : 115px;
+				overflow     : hidden;
+				border-right : 1px dotted #d3d3d3;
 			}
 		}
 	}
 }
 
-.lista-produtos {
+.lista-items {
 	@include container;
-	padding: 0 !important;
-	background-color: transparent !important;
+	padding          : 0 !important;
+	background-color : transparent !important;
 
-	.produto {
-		min-height: 165px;
-		overflow: hidden;
-		border: 1px solid #d3d3d3;
-		background:{
-			repeat: no-repeat;
-			color: white;
-			position: center center;
+	.grid-item {
+		min-height : 165px;
+		overflow   : hidden;
+		background :{
+			repeat   : no-repeat;
+			color    : white;
+			position : center center;
+		};
+
+		&:hover {
+			background-color: #1b1c20;
 		};
 
 		a {
-			display: block;
-			width: 100%;
-			height: 100%;
-			padding: 10px;
-			text-align: left;
-			text-transform: uppercase;
-			font-size: 12px;
-			position: relative;
+			display        : block;
+			width          : 100%;
+			height         : 100%;
+			padding        : 10px;
+			text-align     : left;
+			text-transform : uppercase;
+			font-size      : 18px;
+			position       : relative;
 
 			span {
-				position: absolute;
-				bottom: 10px;
+				position : absolute;
+				display  : none;
+
+				&.bottom {
+					font-size  : 12px;
+					bottom     : 10px;
+					right      : 10px;
+					text-align : right;
+				}
 			}
 
 			&:hover {
-				background: #ec3e35;
-				color: black;
-				text-align: right;
+				background : #ec3e35;
+				color      : black;
+
+				span {
+					display: block;
+				}
 			};
 		}
+	}
+
+	&.categorias .grid-item a {
+		
 	}
 }
 
 .categorias {
 	@include span-columns(16 omega, 16);
-	padding: 0 !important;
-	background-color: transparent !important;
+	padding          : 0 !important;
+	background-color : transparent !important;
 
 	ul {
 		@include container;
-		margin: 0;
-		padding: 0;
+		margin  : 0;
+		padding : 0;
 
 
 		li {
 			@include span-columns(8,16);
 			@include nth-omega(2n);
-			height: 158px;
-			margin-bottom: 15px;
-			border: 1px solid #d3d3d3;
-			background:{
-				repeat: no-repeat;
-				position: center center;
-				color: white;
+			height        : 158px;
+			margin-bottom : 15px;
+			border        : 1px solid #d3d3d3;
+			background    : {
+				repeat    : no-repeat;
+				position  : center center;
+				color     : white;
 			};
 
 			a {
-				display: block;
-				width: 100%;
-				height: 100%;
-				padding: 20px 30px;
-				text-align: left;
-				text-transform: uppercase;
-				font-size: 20px;
-				position: relative;
+				display        : block;
+				width          : 100%;
+				height         : 100%;
+				padding        : 20px 30px;
+				text-align     : left;
+				text-transform : uppercase;
+				font-size      : 20px;
+				position       : relative;
 
 				span {
-					position: absolute;
-					bottom: 20px;
+					position : absolute;
+					bottom   : 10px;
+					left     : 20px;
 				}
 
 				&:hover {
-					background: #ec3e35;
-					color: black;
-					text-align: right;
+					background : #ec3e35;
+					color      : black;
+					text-align : right;
+
+					span {
+						right: 20px;
+					}
+				};
+			}
+		}
+	}
+}
+
+//LOJAS
+.page-id-24 {
+	#content {
+		ul {
+			@include container;
+			margin  : 0;
+			padding : 0;
+
+			li {
+				@include span-columns(8 omega,16);
+				width  : 50%;
+				margin : 5px 0 0 0;
+				float  : left;
+
+				img.alignleft {
+					float        : left;
+					margin-right : 10px;
+				}
+
+				img.alignright {
+					float       : right;
+					margin-left : 10px;
+				}
+
+				h1, h2, p { 
+					float   : left; 
+					display : block;
+					width   : 223px;
+					margin  : 0;
+				}
+
+				h1 {
+					font-weight   : normal;
+					margin-bottom : 50px;
+				}
+
+				&.tr {
+					h1, h2, p { 
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+}
+
+//CONTATO
+.page-id-26 {
+	#content {
+		@include container;
+		.formulario {
+			@include span-columns(8 ,16);
+		}
+
+		ul {
+			@include span-columns(8 omega, 16);
+			margin  : 0;
+			padding : 0;
+
+			li {
+				margin-bottom : 60px;
+				padding-left  : 50px;
+				background    :{
+					repeat   : no-repeat;
+					position : left center;
+					image    : image-url('contato_ico.jpg');
 				};
 			}
 		}
@@ -244,13 +355,13 @@
 .grid-item {
 	$grid_height: 165;
 
-	min-height: 165px;
-	margin-bottom: 10px;
-	overflow: hidden;
-	background:{
-		repeat: no-repeat;
-		color: white;
-		position: center center;
+	min-height    : 165px;
+	margin-bottom : 10px;
+	overflow      : hidden;
+	background    : {
+		repeat    : no-repeat;
+		color     : white;
+		position  : center center;
 	};
 
 	&.col1 { @include span-columns(4,16); }
@@ -260,3 +371,134 @@
 	&.omega { @include omega; }
 
 }
+
+.single {
+	#content {
+		padding    : 0;
+		background : transparent;
+	}
+}
+
+.paginacao {
+	@include span-columns(16,16);
+	text-align: right;
+
+	&.white {
+		span, a { color: #ffffff; }
+		a:hover { color: $hover-color; };
+	}
+}
+
+.bt-voltar {
+	position      : absolute;
+	top           : 30px;
+	right         : 30px;
+	padding-right : 15px;
+	z-index       : 10;
+	background    : {
+		image    : image-url('site/seta_pag_esquerda.png');
+		repeat   : no-repeat;
+		position : right center;
+	};
+
+
+	&.white {
+		top              : 0;
+		color            : #ffffff;
+		background-image : image-url('seta_pag_esquerda_cinza.png');
+
+		&:hover {
+			color: $hover-color;
+		};
+	}
+}
+
+.pikachoose {width: 520px; margin: 0 auto;}
+
+.pika-thumbs{ 
+	padding : 0 16px; 
+	height  : 75px; 
+	
+	li{ 
+		width           : 154px; 
+		height          : 112px; 
+		margin          : 0; 
+		padding         : 0; 
+		overflow        : hidden;
+		float           : left; 
+		list-style-type : none;
+		cursor          : pointer;
+
+		.clip {
+			position       : relative;
+			height         : 100%;
+			text-align     : center; 
+			vertical-align : middle; 
+			overflow       : hidden;
+		}
+	}
+}
+	
+.pika-stage, .pika-textnav {width: 920px;}
+.pika-stage {
+	position   : relative; 
+	height     : 375px;
+	text-align : center;
+	
+	img{
+		height:375px;
+	}
+
+	.caption {
+		display: none;
+	}
+}
+.pika-imgnav {
+	margin-top: 20px;
+
+	a {
+		position    : absolute; 
+		text-indent : -110%; 
+		display     : block;
+		z-index     : 3;
+		cursor      : pointer;
+
+		&.previous {
+			background : image-url('site/seta_esquerda_branca.png') no-repeat left 45%; 
+			height     : 375px; 
+			width      : 50px; 
+			top        : 0px; 
+			left       : 0px;
+		}
+
+		&.next {
+			background : image-url('site/seta_direita_branca.png') no-repeat right 45%; 
+			height     : 375px;  
+			width      : 50px; 
+			top        : 0px; 
+			right      : 0px;
+		}
+
+		&.play, &.pause {
+			display: none;
+		}
+	}
+}
+
+.pika-tooltip{display: none;}
+.pika-counter{display: none;}
+
+.pika-textnav {overflow: hidden; margin: 10px 0 0 0;bottom:10px; position:absolute; display: none;}
+.pika-textnav a {font-size: 12px; text-decoration: none; color: #333; padding: 4px;}
+.pika-textnav a.previous {float: left; width: auto; display: block;}
+.pika-textnav a.next {float: right; width: auto; display: block;}
+
+.pika-loader{ background:url(loading.gif) 3px 3px no-repeat #000; background-color:rgba(0,0,0,0.9); color:white; width:60px; font-size:11px; padding:5px 3px; 
+	text-align:right; position:absolute; top:15px; right:15px; }
+
+/* jCarousel Styles */
+/*if you're not using the carousel you can delete everything below this */
+.jcarousel-skin-pika .jcarousel-container-horizontal { padding: 15px 20px; overflow:hidden; margin-top: 50px;}
+.jcarousel-skin-pika .jcarousel-clip-horizontal {height: 90px; width: 485px;}
+.jcarousel-skin-pika .jcarousel-item-horizontal { margin-right: 10px;}
+

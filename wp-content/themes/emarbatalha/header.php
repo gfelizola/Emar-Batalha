@@ -34,16 +34,18 @@
 </head>
 <?php 
 $background = get_field('imagem_de_fundo');
-$repeticao 	= get_field('repeticao_do_fundo');
-$posicao 	= get_field('posicao_do_fundo');
-$cor_menu 	= get_field('header_bgcolor');
+$repeticao  = get_field('repeticao_do_fundo');
+$posicao    = get_field('posicao_do_fundo');
+$cor_menu   = get_field('header_bgcolor');
 
 if( ! $background ) $background = get_template_directory_uri() . '/images/bg_padrao.jpg';
-if( ! $repeticao ) 	$repeticao = 'no-repeat';
-if( ! $posicao ) 	$posicao = 'right top';
-if( ! $cor_menu ) 	$cor_menu = 'transparent';
+if( ! $repeticao ) 	$repeticao  = 'no-repeat';
+if( ! $posicao ) 	$posicao    = 'right top';
+if( ! $cor_menu ) 	$cor_menu   = 'transparent';
+
+$tamanho 	= $repeticao == 'no-repeat' ? 'cover': '' ;
 ?>
-<body <?php if(is_front_page()): ?>id="home"<?php endif; ?> <?php body_class(); ?> style="background-image:url('<?php echo $background; ?>'); background-repeat: <?php echo $repeticao; ?>; background-position: <?php echo $posicao; ?>;">
+<body <?php if(is_front_page()): ?>id="home"<?php endif; ?> <?php body_class(); ?> style="background-image:url('<?php echo $background; ?>'); background-repeat: <?php echo $repeticao; ?>; background-position: <?php echo $posicao; ?>; background-size: <?php echo $tamanho ?>;">
 	<div id="container">
 		<header class="<?php echo $cor_menu; ?>">
 			<div class="logo <?php the_field('cor_do_logo'); ?>">
@@ -51,6 +53,10 @@ if( ! $cor_menu ) 	$cor_menu = 'transparent';
 			</div>
 			
 			<nav id="primary">
-				<?php wp_nav_menu( array('menu' => 'Primary Navigation' )); ?>
+				<?php wp_nav_menu( array(
+					'menu' => 'Primary Navigation',
+					'walker' => new Main_Menu_Walker
+				)); ?>
 			</nav>
+			
 		</header>

@@ -28,13 +28,18 @@
 					?>
 					<p><?php the_field('referencia') ?></p>
 				</div>
+				<?php $term = array_shift( $categorias ); ?>
+				<a href="<?php echo site_url() . '/' .$term->taxonomy .'/'. $term->slug ?>/" class="bt-voltar">voltar</a>
+				<?php previous_post_link(); ?> 
+				<?php next_post_link(); ?> 
 			</div>
 		<?php endwhile;?>
 	
 		<div class="relacionados">
+			<p>relacionados</p>
 			<ul>
 			<?php 
-			$term = array_shift( $categorias );
+			
 
 			$args = array(
 				'post_type' => 'joias', 

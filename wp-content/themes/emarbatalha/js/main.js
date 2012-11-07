@@ -1,5 +1,14 @@
 jQuery(document).ready(function($) {
 
+
+	//footer
+	var alturaFooter = ($(document).height() - $('#content').height() - $('header').height() - 110 );
+	if( $('#wpadminbar').length > 0 ) alturaFooter -= 28 ;
+	
+	if( alturaFooter < 100 ) alturaFooter = 100 ;
+	$('footer').height( alturaFooter + "px" );
+	
+
 	// home
 	$('.destaque_principal > div:not(:first)').hide();
 	$('.destaque_thumbs ul li:first').hide();
@@ -18,9 +27,9 @@ jQuery(document).ready(function($) {
 		$('.destaque_thumbs ul li:visible:eq(2)').addClass('no-border');
 	});
 
-	createGrid('.lista-produtos');
-	createGrid('.lista-eventos');
-	createGrid('.lista-imprensa');
+	createGrid('.lista-items');
+
+	$('.galeria').PikaChoose({ carousel: true, autoPlay: false, showCaption: false });
 });
 
 

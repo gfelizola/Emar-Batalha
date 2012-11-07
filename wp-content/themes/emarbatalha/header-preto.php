@@ -37,16 +37,30 @@ $background = get_field('imagem_de_fundo');
 $repeticao 	= get_field('repeticao_do_fundo');
 $posicao 	= get_field('posicao_do_fundo');
 $cor_menu 	= get_field('header_bgcolor');
+$tamanho 	= $repeticao == 'no-repeat' ? 'cover': '' ;
 
+if( ! $background ) $background = get_template_directory_uri() . '/images/bg_padrao.jpg';
+if( ! $repeticao ) 	$repeticao = 'no-repeat';
+if( ! $posicao ) 	$posicao = 'right top';
+if( ! $cor_menu ) 	$cor_menu = 'transparent';
+
+global $post;
+$paginas_sem_fundo = array('eventos', 'imprensa');
+if( in_array($post->post_type, $paginas_sem_fundo) ){
+	$background = '';	
+} 
 ?>
-<body <?php body_class(); ?>>
+<body <?php if(is_front_page()): ?>id="home"<?php endif; ?> <?php body_class($post->post_type); ?> style="background-image:url('<?php echo $background; ?>'); background-repeat: <?php echo $repeticao; ?>; background-position: <?php echo $posicao; ?>; background-size: <?php echo $tamanho ?>;">
 	<div id="container">
-		<header class="<?php echo $cor_menu; ?>">
+		<header>
 			<div class="logo <?php the_field('cor_do_logo'); ?>">
-				<h1><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
+				<h1 class="vermelho"><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 			</div>
 			
 			<nav id="primary" class="branco">
-				<?php wp_nav_menu( array('menu' => 'Primary Navigation' )); ?>
+				<?php wp_nav_menu( array(
+					'menu' => 'Primary Navigation',
+					'walker' => new Main_Menu_Walker
+				)); ?>
 			</nav>
 		</header>
